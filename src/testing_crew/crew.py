@@ -1,9 +1,10 @@
 import os
 from typing import List
 
-from crewai import Agent, Crew, Process, Task
+from crewai import LLM, Agent, Crew, Process, Task
 from crewai.agents.agent_builder.base_agent import BaseAgent
-from crewai.project import CrewBase, agent, crew, task
+from crewai.project import CrewBase, agent, crew, llm, task
+from crewai_tools import BraveSearchTool
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -18,27 +19,64 @@ class TestingCrew:
     tasks: "config/tasks.yaml"
 
     """
-    1. Agents
+    1. LLMs
     """
 
-    # Initial agent
-    @agent
-    def initial_tester(self) -> Agent:
-        return Agent(config=self.agents_config["initial_tester"])
-
-    """
-    2. Tasks
-    """
-
-    # Initial task
-    @task
-    def initial_task(self) -> Task:
-        return Task(
-            config=self.tasks_config["initial_task"],
+    @llm
+    def gemini_llm(self):
+        return LLM(
+            api_key=os.getenv("GOOGLE_API_KEY"),
+            temperature=0,
+            model="gemini/gemini-2.5-flash-lite-preview-06-17",
+            stream=True,
         )
 
     """
-    3. Crew
+    2. Agents
+    """
+
+    # 1. Vibe checker agent
+    @agent
+    def vibe_checker(self) -> Agent:
+        agt_vibe_checker = Agent(
+            config=self.agents_config["vibe_checker"],
+            tools=[BraveSearchTool(n_results=2)],
+            llm=self.gemini_llm(),
+        )
+        return agt_vibe_checker
+
+    # 2. Plan Setter agent
+    @agent
+    def plan_setter(self) -> Agent:
+        agt_plan_setter = Agent(
+            config=self.agents_config["plan_setter"],
+            tools=[BraveSearchTool(n_results=5)],
+            llm=self.gemini_llm(),
+        )
+        return agt_plan_setter
+
+    """
+    3. Tasks
+    """
+
+    # 1. Check vibe task
+    @task
+    def check_vibe(self) -> Task:
+        tsk_check_vibe = Task(
+            config=self.tasks_config["check_vibe"],
+        )
+        return tsk_check_vibe
+
+    # 2. Set plan task
+    @task
+    def set_plan(self) -> Task:
+        tsk_set_plan = Task(
+            config=self.tasks_config["set_plan"],
+        )
+        return tsk_set_plan
+
+    """
+    4. Crew
     """
 
     @crew
@@ -46,9 +84,10 @@ class TestingCrew:
         """Creates the TestingCrew crew"""
 
         # Return the crew
-        return Crew(
+        crw_initial_crew = Crew(
             agents=self.agents,
             tasks=self.tasks,
             process=Process.sequential,
-            verbose=False,
+            verbose=True,
         )
+        return crw_initial_crew

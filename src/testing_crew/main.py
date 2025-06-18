@@ -1,24 +1,36 @@
-#!/usr/bin/env python
+# Imports General
 import sys
 import warnings
 from datetime import datetime
 
+# Load API keys
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Init AgentOps
+import agentops
+
+# Import the crew
 from testing_crew.crew import TestingCrew
 
+agentops.init()
+
+# Filter out specific warnings
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
-# This main file is intended to be a way for you to run your
-# crew locally, so refrain from adding unnecessary logic into this file.
-# Replace with inputs you want to test with, it will automatically
-# interpolate any tasks and agents information
+"""
+Main Coding Stuff Begins
+"""
 
 
+# Run the crew
 def run():
     """
     Run the crew.
     """
     inputs = {
-        "user_input": "Hi helpful assistant what is the vibe today?",
+        "user_input": "Hi helpful assistant what is the vibe in New York today?",
     }
 
     try:
@@ -27,6 +39,7 @@ def run():
         raise Exception(f"An error occurred while running the crew: {e}")
 
 
+# Uncomment the following function if you want to implement training functionality
 # def train():
 #     """
 #     Train the crew for a given number of iterations.
@@ -42,6 +55,7 @@ def run():
 #         raise Exception(f"An error occurred while training the crew: {e}")
 
 
+# Replay the crew execution from a specific task
 def replay():
     """
     Replay the crew execution from a specific task.
@@ -53,6 +67,7 @@ def replay():
         raise Exception(f"An error occurred while replaying the crew: {e}")
 
 
+# Test the crew execution and return the results
 def test():
     """
     Test the crew execution and returns the results.
