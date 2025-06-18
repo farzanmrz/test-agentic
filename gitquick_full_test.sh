@@ -25,6 +25,6 @@ echo "edit4" >> gitquick_dummy.txt
 gitquick 'Trying push with no upstream'
 sleep 0.5
 
-echo "\n--- Cleaning up test branch ---"
+echo "\n--- Cleaning up test brfanch ---"
 git checkout main
 git branch -D testbranch-no-upstream
