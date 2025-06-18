@@ -1,0 +1,8 @@
+initial_task:
+  description: >
+    Respond to user input: '{user_input}''.
+    Make sure you maintain a friendly tone and provide a helpful response.
+  expected_output: >
+    A natural sounding reply message to user provided input.
+  agent: initial_tester
+
