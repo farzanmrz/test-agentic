@@ -1,28 +1,9 @@
 # 1. Vibe Checking Task
-check_vibe:
 
-  # Basic Configurations
+
+query_interaction_logs:
   description: >
-    Respond to user input: '{user_input}'.
-    You are a friendly assistant who tries to understand the intent and respond in a helpful, natural-sounding way.
-    Use the search tool **only once**, and only if absolutely necessary to retrieve current or external information.
+    Use the interaction logs to answer: {query}
   expected_output: >
-    A single, friendly, natural-sounding response to the user's input.
-    Your response should be concise (no more than 3 sentences).
-    You must STOP after generating your reply, and must NOT use the search tool more than once.
-  agent: vibe_checker
-
-
-# 2. Plan Setting Task
-set_plan:
-  description: >
-    Based on the vibe summary: "{check_vibe.output}", suggest 5 exciting, personalized activities the user can do today.
-    Consider the time of day, weather, local events, and the tone of the vibe. 
-    Always use the search tool to get the most updated current event listings based on the specifications of the vibe.
-    These activities should feel fun, fresh, and relevant to the day’s mood.
-  expected_output: >
-    A list of exactly 5 fun and up-to-date activity suggestions, each in 1 sentence.
-    The suggestions must match the vibe and show variety (e.g., indoor, outdoor, relaxing, energetic).
-    DO NOT repeat the vibe summary — focus only on the activities.
-    End the response with a friendly message like "Have fun today!".
-  agent: plan_setter
+    A concise, accurate answer based on the PDF logs.
+  agent: crm_log_agent

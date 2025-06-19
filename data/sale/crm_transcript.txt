@@ -1,0 +1,42 @@
+**Call Transcript**
+--------------------
+**Call ID:** 78C5-B9A2
+**Date:** June 18, 2025
+**Time:** 11:05 AM EDT
+**Participants:** Isaac Gains (Agent), Luis Lawrence (Customer)
+**Subject:** Follow-up on Backend Systems Upgrade Demo
+--------------------
+
+[00:05] Isaac Gains: Hi Luis, it's Isaac Gains calling from akenza. Thanks for taking my call.
+
+[00:11] Luis Lawrence: Hi Isaac, thanks for calling. I was just reviewing my notes from the demo yesterday.
+
+[00:18] Isaac Gains: Perfect timing. I wanted to follow up and see what your initial thoughts were.
+
+[00:25] Luis Lawrence: Overall, very impressive. The dashboard was clean and the reporting features are definitely what we're looking for. My director was pleased with what she saw.
+
+[00:41] Isaac Gains: That's fantastic to hear. It sounds like it could be a good fit. Are there any immediate questions or concerns that came up after the call?
+
+[00:52] Luis Lawrence: Yeah, a couple of things. My main concern right now is the **budget**. We're heading into Q3 and new capital expenditures are under a lot of scrutiny. Frankly, I'm not sure I can get the full license cost approved this quarter.
+
+[01:15] Isaac Gains: I understand completely, that’s a common conversation this time of year. We can definitely explore some options there. Before we do, were there any technical questions from your team about the platform itself?
+
+[01:30] Luis Lawrence: Yes. Our lead engineer wanted to know about the **integration** process with our existing SQL database. How much custom development work is required from our side? He’s concerned about the project timeline and how much of his team's resources this would take up.
+
+[01:51] Isaac Gains: That's a great question, and a very important one. Our system has a native SQL connector, so for standard setups, it's almost all configuration, not custom development. We handle the heavy lifting. The goal is to have you up and running in weeks, not months.
+
+[02:10] Luis Lawrence: Okay, that's good to hear. That will definitely put our engineer at ease.
+
+[02:18] Isaac Gains: To address both of your points, how about this: I can send you our technical integration guide—it outlines the whole process. And regarding the **budget**, we do offer phased rollouts and quarterly payment options that could make the Q3 numbers more manageable.
+
+[02:40] Luis Lawrence: A phased rollout... interesting. I hadn't considered that. Sending the technical guide would be very helpful. Let me discuss the phased approach internally.
+
+[02:55] Isaac Gains: Perfect. I'll email you that guide this afternoon. Should we schedule a brief call for this time next week to touch base after you've had a chance to review everything?
+
+[03:08] Luis Lawrence: Yes, let's do that. Please send me an invite.
+
+[03:12] Isaac Gains: Will do. Thanks again for your time, Luis.
+
+[03:15] Luis Lawrence: Thank you. Talk to you next week.
+
+[END OF TRANSCRIPT]
