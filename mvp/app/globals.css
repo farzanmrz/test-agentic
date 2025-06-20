@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 13% 6%; /* dark-bg-primary #0d1117 */
+    --foreground: 210 17% 82%; /* dark-text-primary #c9d1d9 */
+
+    --card: 220 13% 9%; /* dark-bg-secondary #161b22 */
+    --card-foreground: 210 17% 82%; /* dark-text-primary #c9d1d9 */
+
+    --popover: 220 13% 6%; /* dark-bg-primary */
+    --popover-foreground: 210 17% 82%; /* dark-text-primary */
+
+    --primary: 210 17% 82%; /* dark-text-primary */
+    --primary-foreground: 220 14% 10%; /* A darker text for on-primary elements if primary is light */
+
+    --secondary: 220 13% 12%; /* dark-bg-tertiary #21262d */
+    --secondary-foreground: 210 17% 82%; /* dark-text-primary */
+
+    --muted: 220 13% 12%; /* dark-bg-tertiary */
+    --muted-foreground: 215 14% 55%; /* dark-text-secondary #8b949e */
+
+    --accent: 200 88% 57%; /* brand-blue #2fa9f3 */
+    --accent-foreground: 220 13% 6%; /* dark-bg-primary for text on accent */
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 17% 82%;
+
+    --border: 220 10% 19%; /* dark-border #30363d */
+    --input: 220 10% 19%; /* dark-border for input background */
+    --ring: 200 88% 57%; /* brand-blue for focus rings */
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border; /* Uses the CSS variable --border */
+  }
+  body {
+    @apply bg-background text-foreground; /* Uses CSS variables */
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
