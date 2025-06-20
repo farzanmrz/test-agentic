@@ -30,8 +30,7 @@ rag-app/
 ├── docs/      
 ├── data/    
 └── docker-compose.yml (optional, GCP-ready setup)
-├── .env                   # API keys, secrets, file paths
-├── docker-compose.yml     # Unified launch setup
+├── .env                   # API keys, secrets, file paths 
 ├── Dockerfile.backend     # Backend Dockerfile for Cloud Run
 ├── Dockerfile.frontend    # Optional (or use Firebase hosting)
 └── README.md   
