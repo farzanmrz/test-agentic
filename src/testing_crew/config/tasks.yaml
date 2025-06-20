@@ -1,9 +1,0 @@
-# 1. Vibe Checking Task
-
-
-query_interaction_logs:
-  description: >
-    Use the interaction logs to answer: {query}
-  expected_output: >
-    A concise, accurate answer based on the PDF logs.
-  agent: crm_log_agent
