@@ -10,7 +10,6 @@ load_dotenv()
 
 # Init AgentOps
 import agentops
-
 from testing_crew.crew import TestingCrew
 
 agentops.init()
@@ -29,10 +28,10 @@ Main Coding Stuff Begins
 # Run the crew
 def run():
     """
-    Run the CRM-focused crew with a query on customer interaction logs.
+    Run the crew to analyze the skateboard club's meeting minutes.
     """
     inputs = {
-        "query": "What were the notes from the last call with Luis Lawrence about the Backend Systems Upgrade?"
+        "query": "The structure of the meeting was too complicated for me to understand, can you please explain in simple human-understandable terms how to understand the meeting structure?"
     }
 
     try:
@@ -55,11 +54,11 @@ def replay():
 # Test the crew execution and return the results
 def test():
     queries = [
-        "Summarize all touchpoints between Isaac Gains and Luis Lawrence about the Backend Systems Upgrade.",
-        "Which opportunities had both a LinkedIn message and a call associated with them in June?",
-        "What objections were raised during in-person meetings about the Lab Renovation?",
-        "Find all contacts who had more than one interaction within a 48-hour window.",
-        "What actions were planned after the email to Brooke Bradley on 6/10/19?",
+        "How much money was approved for the DJ at Skate-a-Palooza, and which account was it paid from?",
+        "Who volunteered to reserve Webb Lawn for the Skateboard workshop?",
+        "What was the final vote count for Motion #13 concerning meals for the NY trip?",
+        "List all attendees of the meeting on 3.21.07.",
+        "What is the balance of the fundraising account (BAMK08) according to the Treasurer's Report?",
     ]
 
     try:

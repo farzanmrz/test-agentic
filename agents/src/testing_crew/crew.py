@@ -13,7 +13,7 @@ load_dotenv()
 
 @CrewBase
 class TestingCrew:
-    """CRM-focused crew using PDFSearchTool"""
+    """Board minutes analysis crew"""
 
     # Link YAML config files
     agents: "config/agents.yaml"
@@ -29,23 +29,23 @@ class TestingCrew:
             stream=True,
         )
 
-    # 3. Agent: CRM Log Agent
+    # 3. Agent: Board Minutes Analyst
     @agent
-    def crm_log_agent(self) -> Agent:
+    def board_minutes_analyst(self) -> Agent:
         return Agent(
-            config=self.agents_config["crm_log_agent"],
+            config=self.agents_config["board_minutes_analyst"],
             llm=self.gemini_llm(),
             tools=[
                 PDFSearchTool(
-                    pdf="/Users/farzanmirza/Desktop/Drive/Coding/Git/test-agentic/data/sale/crm_customer_interaction.pdf"
+                    pdf="/Users/farzanmirza/Desktop/Drive/Coding/Git/test-agentic/data/admin/board_mins/skateboard.pdf"
                 )
             ],
         )
 
-    # 4. Task: Query CRM Logs
+    # 4. Task: Analyze Board Minutes
     @task
-    def query_interaction_logs(self) -> Task:
-        return Task(config=self.tasks_config["query_interaction_logs"])
+    def analyze_board_minutes(self) -> Task:
+        return Task(config=self.tasks_config["analyze_board_minutes"])
 
     # 5. Crew: Compose and execute
     @crew

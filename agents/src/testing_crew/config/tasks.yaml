@@ -1,12 +1,12 @@
-query_interaction_logs:
+analyze_board_minutes:
   description: >
-    Answer the user's question by carefully analyzing the structured customer interaction logs.
-    These may include calls, emails, meetings, LinkedIn messages, and more. Use reasoning to combine relevant entries
-    and synthesize the most accurate, complete response possible, even if it spans multiple entries.
-    Be precise and structured in your answer.
-    
+    Analyze the provided club meeting minutes, following the structure and rules outlined in the sample PDF.
+    Answer the user's question by carefully examining the text for specific details about motions, financial reports, officer updates, and action items.
+    Pay special attention to motion numbers, voting outcomes, and financial figures from budget or fundraising accounts.
+
     Query: {query}
   expected_output: >
-    A well-structured response that answers the question using facts found in the CRM interaction logs,
-    including relevant dates, contacts, action items, objections, outcomes, and responsible team members.
-  agent: crm_log_agent
+    A detailed and factual answer to the user's query, based *only* on the information present in the meeting minutes.
+    The response should be specific, citing motion numbers, financial amounts, dates, and individuals involved, as found in the text.
+    For example, when asked about a financial transaction, specify the amount, the account (budget or fundraising), the recipient, and the purpose of the payment.
+  agent: board_minutes_analyst
